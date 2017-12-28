@@ -1,11 +1,15 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   name: 'client',
   context: path.resolve(__dirname, '../../client'),
-  entry: './index.js',
+
+  entry: {
+    index: ['babel-polyfill', './index.js']
+  },
 
   output: {
     path: path.resolve(__dirname, '../../public'),
@@ -29,6 +33,13 @@ module.exports = {
             ]
           }
         }]
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader"
+        })
       }
     ]
   },
@@ -38,7 +49,8 @@ module.exports = {
       template: 'index.html',
       inject: 'body',
       filename: 'index.html'
-    })
+    }),
+    new ExtractTextPlugin('style.css')
   ],
 
   resolve: {
