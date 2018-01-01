@@ -1,11 +1,8 @@
 import { combineReducers } from 'redux';
+import game from './modules/game/gameReducer'
 
-// const rootReducer = combineReducers({
-//
-// });
-
-function rootReducer(state = {}, action) {
-  return state;
-}
+const rootReducer = combineReducers({
+  game
+});
 
 export default rootReducer;
