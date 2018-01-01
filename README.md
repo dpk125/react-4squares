@@ -6,3 +6,7 @@ Application built using React, Redux and Redux Saga.
 
 * `yarn install`
 * `yarn start`
+
+## Demo
+
+<https://react-4squares.herokuapp.com/>
