@@ -7,7 +7,9 @@ module.exports = {
   name: 'client',
   context: path.resolve(__dirname, '../../client'),
 
-  entry: './index.js',
+  entry: {
+    index: ['babel-polyfill', './index.js']
+  },
 
   output: {
     path: path.resolve(__dirname, '../../public'),
