@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { constants } from '../../core/constants';
 import {
   guessSequenceSquare,
   revealRandomSquare,
   showNextSequence,
   startNewGame
 } from '../../core/modules/game/gameActions';
-import { constants } from '../../core/constants';
 import Square from '../../components/Square';
 import Button from '../../components/Button';
 
