@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Square = ({ active, backgroundColor, click }) => {
   return (
@@ -6,6 +7,12 @@ const Square = ({ active, backgroundColor, click }) => {
       <button style={{backgroundColor}} onClick={() => click()} />
     </div>
   );
+};
+
+Square.propTypes = {
+  active: PropTypes.bool.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  click: PropTypes.func.isRequired
 };
 
 export default Square;
